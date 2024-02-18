@@ -20,6 +20,11 @@ En el archivo .env configurarlo con tus propias credenciales
 ### Instalar dependencias  
 - Abre la terminal de tu VSC o en tu editor de codigo y ejecuta ***npm install***
 ###  Uso
-- Al iniciar tu app web, registra tu usuario y confirmalo en mailtrap para poder iniciar sesión y navegar por la interfaz de usuario
+1. Registra tu base de datos y configura el archivo .env
+2. Registra o crea tu cuenta en MailTrap para agregar tus credenciales en el archivo .env
+3. Arranca tu app en la terminal
+   - Abre la terminal y ejecuta: ***cd public***.
+   - seguido despues de entrar en la carpeta public ejecuta: ***php -S localhost:tu_servidor_local***.
+   - Esto te dara el link para ir a tu app web y poder usarla.
 ### Contacto 
 - Escribeme al correo ***marc01cruz2001@gmail.com***
