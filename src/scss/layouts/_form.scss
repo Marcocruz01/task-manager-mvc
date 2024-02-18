@@ -1,0 +1,118 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.container-auth {
+    padding: 10px;
+    @include m.tablet {
+        padding: 30px;
+    }
+
+    &__image {
+        width: 200px;
+        @include m.tablet {
+            width: 180px;
+        }
+    }
+
+    &__pre-form {
+        height: 100%;
+        width: 55rem;
+        @include m.tablet {
+            height: auto;
+        }
+
+        // Before en el telefono
+        &::before {
+            position: absolute;
+            content: '';
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            left: 0;
+            background: rgb(13, 109, 252);
+            background: linear-gradient(260deg, rgba(v.$gray, .10) 0%, v.$primary 100%);
+            animation: contenido 3s infinite ease-in-out;
+            // after en telefoo
+            @keyframes contenido {
+                0% {
+                    top: 90px;
+                }
+                50% {
+                    top: 110px;
+                }
+                100% {
+                    top: 90px;
+                }
+            }
+            // after en tablet
+            @include m.tablet {
+                @keyframes contenido {
+                    0% {
+                        top: 0px;
+                    }
+                    50% {
+                        top: 20px;
+                    }
+                    100% {
+                        top: 0px;
+                    }
+                }
+            }
+        }
+
+        // after en telefono
+        &::after {
+            position: absolute;
+            content: '';
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            right: 0;
+            background: rgb(13, 109, 252);
+            background: linear-gradient(90deg, rgba(v.$gray, .10) 0%, v.$primary 100%);
+            animation: contenido1 3s infinite ease-in-out;
+            // before en telefono
+            @keyframes contenido1 {
+                0% {
+                    bottom: 90px;
+                }
+                50% {
+                    bottom: 110px;
+                }
+                100% {
+                    bottom: 90px;
+                }
+            }
+            // before en tablet
+            @include m.tablet {
+                @keyframes contenido1 {
+                    0% {
+                        bottom: 0px;
+                    }
+                    50% {
+                        bottom: 20px;
+                    }
+                    100% {
+                        bottom: 0px;
+                    }
+                }
+            }
+        }
+
+    }
+    &__form {
+        background-color: rgba(255, 255, 255, 20%);
+        backdrop-filter: blur(50px);
+        padding: 20px;
+        @include m.tablet {
+            padding: 40px;
+        }
+    }
+    &__btn-password {
+        display: none;
+        color: darken(v.$gray, 20);
+        &--mostrar {
+            display: block;
+        }
+    }
+}

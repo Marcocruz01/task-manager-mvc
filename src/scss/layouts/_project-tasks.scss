@@ -1,0 +1,39 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.counter {
+    color: v.$mora;
+}
+.task {
+    transition-property: background-color;
+    transition-duration: .3s;
+    background-color: #F8F9FA;
+    cursor: pointer;
+    &:hover {
+        background-color: darken(#F8F9FA, 2);
+    }
+    &__info {
+        width: 85%;
+    }
+    &__title {
+        color: #6C6C6C;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+    &__date {
+        color: #878787;
+    }
+    &__button-state {
+        &--pending {
+            @include m.button(v.$flamingo, v.$flamingo);
+        }
+        &--completed {
+            @include m.button(v.$mountain-meadow, v.$mountain-meadow);
+        }
+    }
+    &__footer {
+        width: 50%;
+    }
+}

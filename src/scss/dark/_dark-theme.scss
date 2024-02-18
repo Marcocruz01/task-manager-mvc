@@ -1,0 +1,138 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.dark-theme {
+
+    .navbar, .sidebar {
+        box-shadow: 0px 0px 5px rgba(255, 255, 255, .1);
+    }
+    .dashboard__main::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, .4);
+        border-radius: 5px;
+    }
+    .dropdown-menu, .dashboard, .input-nav,.button-add, .swal2-modal, .swal2-select, .form-control  {
+        background-color: v.$bg-black;
+    }
+    .sidebar, .navbar {
+        background-color: darken(v.$bg-black, 2);
+    }
+    .widget-container__calendar {
+        background-color: lighten(v.$bg-black, 5);
+        border: 1px solid v.$gray-darkness;
+        box-shadow:
+        0px 1.2px 2.2px rgba(0, 0, 0, 0.02),
+        0px 2.9px 5.3px rgba(0, 0, 0, 0.028),
+        0px 5.4px 10px rgba(0, 0, 0, 0.035),
+        0px 9.6px 17.9px rgba(0, 0, 0, 0.042),
+        0px 18px 33.4px rgba(0, 0, 0, 0.05),
+        0px 43px 80px rgba(0, 0, 0, 0.07);
+    }
+    .sidebar {
+        border-right: 1px solid v.$gray-darkness;
+    }
+    .navbar, .sidebar__header, .panel-user, .projects-user, .navbar-options__nav-options, .navbar-options__options-layout,
+    .content-header, .navegation-line, .content-tasks__header, .div-task {
+        border-bottom: 1px solid v.$gray-darkness;
+    }
+    .dropdown-menu, .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active, .navegation-bar,
+    .input-nav, .button-add, .progress, .swal2-input, .swal2-select, .swal2-textarea, .form-control {
+        border: 1px solid v.$gray-darkness;
+    }
+    .div-task {
+        &:hover {
+            background-color: rgba(255, 255, 255, .030);
+        }
+    }
+    .title, .dropdown-toggle, .iconic, .btn-options, .text-btn, .icon-menu, .panel-user__name, .title-content, .name-project,
+    .title-footer, .btn-drop-down, .icon, .card__title, .view-task__header, .title-count, .swal2-title, .view-task__title,
+    .card-project__header, .task__title, .title-account, .description-account-help, .form-label, .swal2-html-container,
+    .content-tasks__title, .icon-header, .div-task__title-task  {
+        color: v.$bg-body-tertary;
+    }
+    .counter {
+        color: lighten(v.$mora, 15);
+    }
+    .title-sidebar, .panel-user__btns, .panel-user__count-bar {
+        color: lighten(v.$mora, 20);
+    }
+    .panel-user__email, .panel-user__title-task, .count-numeric, .swal2-label, .swal2-input::placeholder, .swal2-input, .swal2-select,
+    .swal2-textarea, .view-task__description, .view-task__info, .options, .input-text, .input-text::placeholder, .div-task__description-task {
+        color: v.$gray;
+    }
+    .progress {
+        background-color: rgba(v.$mora, .2);
+        box-shadow: none;
+    }
+    .progress-bar {
+        background-color: lighten(v.$mora, 10);
+    }
+    .navegation-bar {
+        background-color: lighten(v.$bg-black, 1);
+        box-shadow: 0px 2px 6px rgba(255, 255, 255, .030);
+    }
+    .accordion-body {
+        background-color: lighten(v.$bg-black, 1);
+        border: 1px solid v.$gray-darkness;
+    }
+    .input-nav, .active, .button-add {
+        color: v.$white;
+    }
+    .input-nav::placeholder {
+        color: v.$white;
+    }
+    .widget-content-calendar {
+        box-shadow: 0px 8px 20px rgba(255, 255, 255, .050);
+    }
+    .btn-add {
+        background-color: rgba(v.$mora, .20);
+        color: lighten(v.$mora, 15);
+        border-radius: 5px;
+        transition-property: background-color;
+        transition-duration: .3s;
+        &:hover {
+            background-color: rgba(v.$mora, .30);
+        }
+    }
+    .select {
+        background-color: lighten(v.$bg-black, 2);
+        color: v.$gray;
+    }
+    .card, .card-project, .task {
+        background-color: darken(v.$bg-black, 1);
+        border: 1px solid v.$gray-darkness;
+    }
+    .button-actions--edite {
+        color: v.$white;
+        &:hover {
+            background-color: rgba(255, 255, 255, .2);
+        }
+    }
+    .card__description {
+        color: v.$gray;
+    }
+    .card__button-view {
+        @include m.button(v.$mora, v.$mora);
+    }
+    .card-project__btn-actions--edite {
+        transition-property: background-color;
+        transition-duration: .3s;
+        background-color: rgba(v.$primary, .20);
+        color: v.$primary;
+        &:hover {
+            background-color: rgba(v.$primary, .25);
+        }
+    }
+    .canvas {
+        background-color: darken(v.$bg-black, .10);
+        border: 1px solid v.$gray-darkness;
+    }
+    .card-project__btn-actions--delete {
+        transition-property: background-color ;
+        transition-duration: .3s;
+        background-color: rgba(v.$red, .20);
+        color: v.$red;
+        &:hover {
+            background-color: rgba(v.$red, .25);
+        }
+    }
+}

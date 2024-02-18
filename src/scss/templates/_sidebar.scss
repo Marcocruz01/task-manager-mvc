@@ -1,0 +1,125 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sidebar {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    transform: translateX(-100%);
+    top: 70px;
+    bottom: 0;
+    transition-property: transform;
+    transition-duration: .3s;
+    background-color: v.$bg-body-tertary;
+    transition: all .2s ease;
+    border-right: 1px solid v.$gray;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .1);
+    @include m.tablet {
+        transform: translateX(-100%); 
+    }
+    @include m.desktop {
+        position: relative;
+        top: 0;
+        transform: translateX(0); 
+        width: 40rem;
+    }
+    &__header {
+        height: 70px;
+        border-bottom: 1px solid v.$gray;
+        transition: all .2s ease;
+        a {
+            color: v.$mora;
+            letter-spacing: 1.5px;
+        }
+    }
+    &--show {
+        transform: translateX(0%); 
+    }
+}
+.panel-user {
+    transition: all .2s ease;
+    border-bottom: 1px solid v.$gray;
+    &__image {
+        max-height: 100px;
+        max-width: 100px;
+        object-fit: cover;
+    }
+    &__email {
+        color: v.$gray-high;
+    }
+
+    &__position {
+        color: rgb(97,144,232);
+    }
+    
+    &__btns {
+        color: v.$mora;
+        background-color: rgba(v.$mora, .10);
+        transition-property: background-color;
+        transition-duration: .3s;
+        &:hover {
+            background-color: rgba(v.$mora, .20);
+        }
+    }
+    &__title-task {
+        color: darken(v.$gray, 30);
+    }
+    &__count-bar {
+        a, p {
+            color: v.$mora;
+        }
+    }
+}
+.progress-bar {
+    transition: all .2s ease;
+    background-color: rgb(74, 112, 184);
+}
+.progress {
+    transition: all .2s ease;
+    box-shadow: 0px 5px 10px rgba(97,144,232, .2);
+    border: 1px solid v.$gray;
+}
+.title-footer {
+    transition: all .2s ease;
+    color: darken(v.$gray, 30);
+}
+.projects-user {
+    transition: all .2s ease;
+    border-bottom: 1px solid v.$gray;
+    &__container {
+        min-height: 110px;
+    }
+    &__circle {
+        width: 15px;
+        height: 15px;
+        border-radius: 25px;
+
+        &--yellow {
+            border: 3px solid v.$cream-can;
+        }
+        &--orange {
+            border: 3px solid v.$flamingo
+        }
+        &--green {
+            border: 3px solid v.$mountain-meadow;
+        }
+        &--primary {
+            border: 3px solid v.$primary;
+        }
+    }
+    p {
+        color: v.$mora;
+    }
+}
+.footer-sidebar {
+    transition: all .2s ease;
+    margin-top: 5%;
+    width: 100%;
+    &__action-close {
+        display: grid; 
+        width: 100%;
+        @include m.desktop {
+            display: none;
+        }
+    }
+}

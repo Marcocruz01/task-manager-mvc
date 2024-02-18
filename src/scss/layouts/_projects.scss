@@ -1,0 +1,54 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.card-project {
+    width: 100%;
+    height: auto;
+    background-color: v.$bg-body-tertary;
+    transition-property: box-shadow;
+    transition-duration: .3s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .050);
+
+    &:hover {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+    }
+
+    &__header {
+        color: #6C6C6C;
+        transition-property: color;
+        transition-duration: .3s;
+        &:hover {
+            color: rgba(v.$primary, .60);
+        }
+    }
+    &__date {
+        color: #b4b4b4;
+        font-weight: 500;
+    }
+    &__count-task {
+        background-color: rgba(v.$mora, .10);
+        color: v.$mora;
+    }
+    &__btn-actions {
+        background-color: transparent;
+
+        &--edite {
+            transition-property: background-color;
+            transition-duration: .3s;
+            background-color: rgba(v.$primary, .10);
+            color: v.$primary;
+            &:hover {
+                background-color: rgba(v.$primary, .15);
+            }
+        }
+        &--delete {
+            transition-property: background-color ;
+            transition-duration: .3s;
+            background-color: rgba(v.$red, .10);
+            color: v.$red;
+            &:hover {
+                background-color: rgba(v.$red, .15);
+            }
+        }
+    }
+}

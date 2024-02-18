@@ -1,0 +1,29 @@
+@use 'base/variables' as v;
+
+/** Media Queries **/
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+@mixin button ($color, $bg-color) {
+    color: $color;
+    background-color: rgba($bg-color, .20);
+    transition-property: background-color;
+    transition-duration: .3s;
+    padding: 7px;
+    &:hover {
+        background-color: rgba($bg-color, .25);
+    }
+}

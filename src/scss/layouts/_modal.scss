@@ -1,0 +1,21 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.container-task {
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: start;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    select {
+        border-radius: 5px;
+        border: 1px solid v.$gray;
+    }
+    input, textarea, select {
+        min-width: 95%;
+        margin: 0 5px;
+    }
+}

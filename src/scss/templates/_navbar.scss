@@ -1,0 +1,60 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.navbar {
+    height: 70px;
+    min-width: -webkit-fill-available;
+    position: static;
+    background-color: v.$bg-body-tertary;
+    transition: all .2s ease;
+    border-bottom: 1px solid v.$gray;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .1);
+    @include m.tablet {
+        position: absolute;
+    }
+    &__menu {
+        display: block;
+        @include m.desktop {
+            display: none;
+        }
+    }
+    &__close-button {
+        display: none;
+        @include m.desktop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__drowp-down-option {
+        display: none;
+        @include m.desktop {
+            display: block; 
+        }
+    }
+}
+.iconic {
+    transition: all .2s ease;
+    color: v.$black;
+    &:hover {
+        background-color: rgba(v.$gray, .3);
+    }
+}
+
+.navegation-bar {
+    transition: all .2s ease;
+    background-color: v.$bg-body-tertary;
+    border: 1px solid v.$gray;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, .1);
+}
+.input-nav {
+    transition: all .2s ease;
+    background-color: v.$white;
+}
+.button-add {
+    transition: all .2s ease;
+    border: 1px solid v.$gray;
+}
+.navegation-line {
+    border-bottom: 1px solid v.$gray;
+}
